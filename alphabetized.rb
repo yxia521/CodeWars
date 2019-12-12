@@ -13,6 +13,14 @@ def alphabetized(string)
   string.chars.sort{|a, b| a.downcase <=> b.downcase}.join
 end
 
+# --- 2nd try ---
+def alphabetized(string)
+  result = []
+  string.each_char {|char| result << char if char =~ /[a-z]/i}
+  p result
+  result.sort_by{|i| i.downcase}.join
+end
+
 # --- shorter sol ---
 
 def alphabetized(string)
@@ -20,4 +28,4 @@ def alphabetized(string)
   string.chars.sort_by{|char| char.downcase}.join
 end
   
-p alphabetized("The Holy Bible") == "BbeehHilloTy"
+p alphabetized("The Holy Bible") == "BbeeHhilloTy"
